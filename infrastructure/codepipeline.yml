@@ -81,7 +81,7 @@ Resources:
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: nikolaik/python-nodejs:python3.9-nodejs16
+        Image: public.ecr.aws/bitnami/node:latest
         PrivilegedMode: false
       Name: "sls-deploy-backend"
       Source:
