@@ -23,3 +23,27 @@ Resources:
         BlockPublicPolicy: true
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
+
+  backendPipelineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: "backendPipelinePipelineCreator"
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: [ 'sts:AssumeRole' ]
+            Effect: Allow
+            Principal:
+              Service:
+                - codepipeline.amazonaws.com
+        Version: '2012-10-17'
+      Path: /
+      Policies:
+        - PolicyName: "backendPipelinePolicy"
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                  - '*'
+                Effect: Allow
+                Resource: '*'
+
