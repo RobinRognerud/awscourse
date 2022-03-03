@@ -21,9 +21,10 @@ def calculate(event, context):
     number1 = body["number1"]
     number2 = body["number2"]
     sum = number1 + number2
+    product = number1 * number2
 
     body = {
-        "message": "The sum of the numbers equals: " + str(sum),
+        "message": "The product of the numbers equals: " + str(product),
         "input": event
     }
 
